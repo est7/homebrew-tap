@@ -1,13 +1,13 @@
 class GhosttyBridge < Formula
   desc "CLI for AI agents to communicate across Ghostty terminal panes"
   homepage "https://github.com/est7/ghostty-bridge"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/est7/ghostty-bridge/releases/download/v0.3.0/ghostty-bridge-0.3.0-aarch64-apple-darwin.tar.gz"
-      sha256 "2f6cef82c0d323c180d784225e9d8c9ee117fb2d3d2abf63055a2515efb83a1c"
+      url "https://github.com/est7/ghostty-bridge/releases/download/v0.4.0/ghostty-bridge-0.4.0-aarch64-apple-darwin.tar.gz"
+      sha256 "8df3d699cbbb91b3215e464f5eac9453cbc98e76d95b6b5776c796564b84f652"
     end
   end
 
