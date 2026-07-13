@@ -1,5 +1,5 @@
 class SkillsSwitch < Formula
-  desc "Manage project-local Agent Skills with an atomic terminal UI"
+  desc "Manage Agent Skills, MCP servers, and system prompts from a terminal UI"
   homepage "https://github.com/est7/skills-switch-tui"
   version "0.1.0"
 

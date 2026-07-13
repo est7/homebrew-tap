@@ -1,0 +1,88 @@
+name: Update skills-switch formula
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag; blank selects the latest stable release
+        required: false
+        type: string
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-skills-switch-formula
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v4
+
+      - name: Resolve release tag
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REQUESTED_TAG: ${{ inputs.tag }}
+        run: |
+          tag="$REQUESTED_TAG"
+          if [[ -z "$tag" ]]; then
+            tag="$(gh api repos/est7/skills-switch-tui/releases/latest --jq .tag_name)"
+          fi
+          if [[ ! "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+([-+][0-9A-Za-z.-]+)?$ ]]; then
+            echo "Invalid release tag: $tag" >&2
+            exit 1
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Download release checksums
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/skills-switch-release"
+          gh release download "$RELEASE_TAG" \
+            --repo est7/skills-switch-tui \
+            --pattern checksums.txt \
+            --dir "$RUNNER_TEMP/skills-switch-release" \
+            --clobber
+
+      - name: Render formula
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          ruby scripts/update-skills-switch-formula.rb \
+            "$RELEASE_TAG" \
+            "$RUNNER_TEMP/skills-switch-release/checksums.txt" \
+            Formula/skills-switch.rb
+
+      - name: Test renderer
+        run: ruby test/update_skills_switch_formula_test.rb
+
+      - name: Validate formula syntax
+        run: ruby -c Formula/skills-switch.rb
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@18fcb8e3e06b4247c676c506750dc95ea7226479
+
+      - name: Validate Homebrew style
+        run: brew style Formula/skills-switch.rb
+
+      - name: Commit formula update
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          if git diff --quiet -- Formula/skills-switch.rb; then
+            echo "Formula already matches $RELEASE_TAG"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/skills-switch.rb
+          git commit -m "chore(skills-switch): update to $RELEASE_TAG"
+          git push
