@@ -84,6 +84,7 @@ jobs:
 
       - name: Commit formula update
         env:
+          GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ steps.release.outputs.tag }}
         run: |
           if git diff --quiet -- Formula/skills-switch.rb; then
@@ -92,6 +93,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          gh auth setup-git
           git add Formula/skills-switch.rb
           git commit -m "chore(skills-switch): update to $RELEASE_TAG"
           git push origin HEAD:main
