@@ -22,7 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out tap
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@18fcb8e3e06b4247c676c506750dc95ea7226479
 
       - name: Resolve release tag
         id: release
@@ -67,8 +70,14 @@ jobs:
       - name: Validate formula syntax
         run: ruby -c Formula/skills-switch.rb
 
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@18fcb8e3e06b4247c676c506750dc95ea7226479
+      - name: Verify rendered version
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          expected_version="${RELEASE_TAG#v}"
+          ruby -e 'abort "Formula version mismatch" unless File.read(ARGV[0]).include?(%Q(version "#{ARGV[1]}"))' \
+            Formula/skills-switch.rb \
+            "$expected_version"
 
       - name: Validate Homebrew style
         run: brew style Formula/skills-switch.rb
