@@ -1,29 +1,29 @@
 class SkillsSwitch < Formula
   desc "Manage Agent Skills, MCP servers, and system prompts from a terminal UI"
   homepage "https://github.com/est7/skills-switch-tui"
-  version "0.14.0"
+  version "0.15.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/est7/skills-switch-tui/releases/download/v0.14.0/skills-switch_0.14.0_darwin_arm64.tar.gz"
-      sha256 "2c1936af28a4491449feeef58e105c2a388df2520c09164e4b81469955eb5847"
+      url "https://github.com/est7/skills-switch-tui/releases/download/v0.15.0/skills-switch_0.15.0_darwin_arm64.tar.gz"
+      sha256 "a053f43891402549615a78ba118e2415a2fd35a8a5fe0d18e1172e503c21aa00"
     end
 
     on_intel do
-      url "https://github.com/est7/skills-switch-tui/releases/download/v0.14.0/skills-switch_0.14.0_darwin_amd64.tar.gz"
-      sha256 "6acde7097d2b4ccba24004e5c272576b890a4c0a7c20ae7b6800632b835a1c2b"
+      url "https://github.com/est7/skills-switch-tui/releases/download/v0.15.0/skills-switch_0.15.0_darwin_amd64.tar.gz"
+      sha256 "335043e12925aeeed8699705bb1720c4ecf8e5f6d3a209a496afb2f35e3c2cde"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/est7/skills-switch-tui/releases/download/v0.14.0/skills-switch_0.14.0_linux_arm64.tar.gz"
-      sha256 "6b9f4639c3f65ef57d585e6f9f3a337385b7bf17616d5f183fb5e1f96ee17c84"
+      url "https://github.com/est7/skills-switch-tui/releases/download/v0.15.0/skills-switch_0.15.0_linux_arm64.tar.gz"
+      sha256 "b2ea2a7ec547967a509cca51c03f30b93671f00628f57823be1f34b2cf5738ce"
     end
 
     on_intel do
-      url "https://github.com/est7/skills-switch-tui/releases/download/v0.14.0/skills-switch_0.14.0_linux_amd64.tar.gz"
-      sha256 "d282fe71fabc59b48c354a605dd0d9e563541a2e3f5a955a2050faf7ac4d9681"
+      url "https://github.com/est7/skills-switch-tui/releases/download/v0.15.0/skills-switch_0.15.0_linux_amd64.tar.gz"
+      sha256 "e9260e897950fe9724c883fdf6a9d62b5c5ff02a722c8a0ce6df1d74229b1081"
     end
   end
 
