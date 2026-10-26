@@ -7,25 +7,25 @@ class RexAmqAdapter < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.1.1/rex-amq-adapter_0.1.1_darwin_arm64.tar.gz"
-      sha256 "8eeb4dc9a08be8789355eba30127bcfc0e829160a8ed5fc6bb3650495da8c1f9"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.1.2/rex-amq-adapter_0.1.2_darwin_arm64.tar.gz"
+      sha256 "dd8559997f884fb4d37bae3099f9c3258db5b5793000a7d44cced12909832af5"
     end
 
     on_intel do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.1.1/rex-amq-adapter_0.1.1_darwin_amd64.tar.gz"
-      sha256 "a386d97c7aa5bb771ee1cbe7ade27969772dc487c7fb6227ed93a7f648b19e1f"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.1.2/rex-amq-adapter_0.1.2_darwin_amd64.tar.gz"
+      sha256 "bf95da490273984b94ada17875eb9418f531e3b4603d2cad93cf03d00e5d5063"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.1.1/rex-amq-adapter_0.1.1_linux_arm64.tar.gz"
-      sha256 "6cad9f264650b94df93612b8beb31fd85593d29fc452adaa4e83cffe5cf980f7"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.1.2/rex-amq-adapter_0.1.2_linux_arm64.tar.gz"
+      sha256 "747bc8d6cd58fb195f3878a935a9f66961611d219c29736ca4854523f3956965"
     end
 
     on_intel do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.1.1/rex-amq-adapter_0.1.1_linux_amd64.tar.gz"
-      sha256 "47d16bdc497509cd946d289eb1b4b620cbde003ad19754e4be9f36289cdc4c84"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.1.2/rex-amq-adapter_0.1.2_linux_amd64.tar.gz"
+      sha256 "5c0f9fe05c7e95f24061193496b1a0739486f87b85b760d3934515dcf27ef369"
     end
   end
 
@@ -39,6 +39,7 @@ class RexAmqAdapter < Formula
       Antigravity, Pi):
         rex-amq-adapter setup
 
+      Start Codex with --no-daemon so its hooks and tools inherit the Rex pane environment.
       Codex runs new hooks only after you approve them with /hooks.
       Upgrades need no second setup: the hooks run #{opt_bin}/rex-amq-adapter.
     EOS
