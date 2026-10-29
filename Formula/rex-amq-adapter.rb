@@ -41,7 +41,9 @@ class RexAmqAdapter < Formula
 
       Start Codex with --no-daemon so its hooks and tools inherit the Rex pane environment.
       Codex runs new hooks only after you approve them with /hooks.
-      Upgrades need no second setup: the hooks run #{opt_bin}/rex-amq-adapter.
+      Upgrades keep the hooks and the agent guide current: they run
+      #{opt_bin}/rex-amq-adapter. If `rex-amq-adapter status` then reports
+      anything outdated (such as the Pi extension), run setup again.
     EOS
   end
 
