@@ -7,25 +7,25 @@ class RexAmqAdapter < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.4.0/rex-amq-adapter_0.4.0_darwin_arm64.tar.gz"
-      sha256 "e8ca896f26ff820387f30334ab3bbd1e7bae012b6b3399bb662e4dd5f89c87be"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.4.1/rex-amq-adapter_0.4.1_darwin_arm64.tar.gz"
+      sha256 "d313e79ebb378b82108558aad9a3b23afd72219d490cbdbab5903bd9cbb3aa22"
     end
 
     on_intel do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.4.0/rex-amq-adapter_0.4.0_darwin_amd64.tar.gz"
-      sha256 "534d379293db9206204bd026e45410b5e621a906963b281a5af5ced8137322c1"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.4.1/rex-amq-adapter_0.4.1_darwin_amd64.tar.gz"
+      sha256 "b9c60e7e266f1b603ede26680712659c3b34abb85ceef83c9a2e9c3382d32e15"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.4.0/rex-amq-adapter_0.4.0_linux_arm64.tar.gz"
-      sha256 "dac796f111d6d446f9f0b83cb016c60720028faaf3561e7b2933a67dfcfcea65"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.4.1/rex-amq-adapter_0.4.1_linux_arm64.tar.gz"
+      sha256 "424d2c86c052e418c213981951234952e81b1a7344a919719f07544ac7c17f1e"
     end
 
     on_intel do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.4.0/rex-amq-adapter_0.4.0_linux_amd64.tar.gz"
-      sha256 "6f453ad8c788b90a7e0ea8406f1fdd21086219e8124ebdec5b751ac94f33870d"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.4.1/rex-amq-adapter_0.4.1_linux_amd64.tar.gz"
+      sha256 "2d5f6f6bd34214c298b14a95a4e558da61a713e2c663f86b65f9f1508ee5bb2d"
     end
   end
 
