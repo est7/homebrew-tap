@@ -1,8 +1,8 @@
 class RexHistory < Formula
   desc "Rex pane history and coding-agent transcripts in a floating Neovim"
   homepage "https://github.com/est7/rex-history"
-  url "https://github.com/est7/rex-history/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "7c4eba9c497fcdc6c9fcbbccc1198bac7adf6be811843977e02f407fce8e6e03"
+  url "https://github.com/est7/rex-history/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "404bb3a35c52f2daf3f9e633abc2da12f62bc01bc2d5f39b812183cf9c59280c"
   license "MIT"
 
   depends_on "neovim"
