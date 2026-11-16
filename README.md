@@ -26,3 +26,11 @@ brew install est7/tap/rex-history
 ```
 
 Its formula is updated by hand for each tag of [est7/rex-history](https://github.com/est7/rex-history): the tag's source tarball URL and its `sha256`.
+
+Install `rex-amq-ui` (Cmd+Shift+A floating Crew and Epics cockpit panel for Rex sessions; pulls in `rex-amq-adapter`), then load it from your Rex `init.lua` with the `dofile` line `brew info rex-amq-ui` prints:
+
+```sh
+brew install est7/tap/rex-amq-ui
+```
+
+Its formula is updated by hand for each release of [est7/rex-amq-ui](https://github.com/est7/rex-amq-ui): new release URLs and the `sha256` values from the release's `SHA256SUMS`.
