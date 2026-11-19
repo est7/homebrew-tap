@@ -7,25 +7,25 @@ class RexAmqUi < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/est7/rex-amq-ui/releases/download/v0.1.0/rex-amq-ui_0.1.0_darwin_arm64.tar.gz"
-      sha256 "1c4c0b0cc6f08a42baefc3ac824a3b52a4e0d91a631c14b4d96a9a17d463fb19"
+      url "https://github.com/est7/rex-amq-ui/releases/download/v0.2.0/rex-amq-ui_0.2.0_darwin_arm64.tar.gz"
+      sha256 "805e238c48e0ae7300950dc3c34395d12c037585bd33179688a0736c29f3dcfc"
     end
 
     on_intel do
-      url "https://github.com/est7/rex-amq-ui/releases/download/v0.1.0/rex-amq-ui_0.1.0_darwin_amd64.tar.gz"
-      sha256 "d3dd25d3abba4fd482406d12a30b1085a9c43822cb2fbeeb2f6611cd38055ef5"
+      url "https://github.com/est7/rex-amq-ui/releases/download/v0.2.0/rex-amq-ui_0.2.0_darwin_amd64.tar.gz"
+      sha256 "cf88e83a370a6e1aaf532cfe6cd0f3935af03b3a278a41e553502f0b90c09a1a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/est7/rex-amq-ui/releases/download/v0.1.0/rex-amq-ui_0.1.0_linux_arm64.tar.gz"
-      sha256 "5a3de6935236dae0ab7719c39f12a18cdfd78fcbfc9754cf428f1cedc71bc7b4"
+      url "https://github.com/est7/rex-amq-ui/releases/download/v0.2.0/rex-amq-ui_0.2.0_linux_arm64.tar.gz"
+      sha256 "ac98e18f503b6ee8be9537f31816eab8b18d55f3e5ce0a47fbd0e6bbba860354"
     end
 
     on_intel do
-      url "https://github.com/est7/rex-amq-ui/releases/download/v0.1.0/rex-amq-ui_0.1.0_linux_amd64.tar.gz"
-      sha256 "02d158ec69f930a8c9876cfd9a172bf78648bb49ea4af884aa745d34f52ff3d5"
+      url "https://github.com/est7/rex-amq-ui/releases/download/v0.2.0/rex-amq-ui_0.2.0_linux_amd64.tar.gz"
+      sha256 "043792a1982d6cba279ad1a556f1c4f6c4d026be5944e35fe85ca514252ec383"
     end
   end
 
