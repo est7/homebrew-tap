@@ -7,25 +7,25 @@ class RexAmqAdapter < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.23.1/rex-amq-adapter_0.23.1_darwin_arm64.tar.gz"
-      sha256 "5ff4ed5638f3b18974a35a40804892b98bab04aeb9bfb4db6e398d2844d5c868"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.24.0/rex-amq-adapter_0.24.0_darwin_arm64.tar.gz"
+      sha256 "710c4b190ede1dfa0ad9529bd76a3f53136b86508e5a47dd810fcce1af20409b"
     end
 
     on_intel do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.23.1/rex-amq-adapter_0.23.1_darwin_amd64.tar.gz"
-      sha256 "02d4e2dcd62e57964016475086d0bf629752c260173417e6be11714af779a81f"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.24.0/rex-amq-adapter_0.24.0_darwin_amd64.tar.gz"
+      sha256 "c05be01c636ac3948a788067358f93b3f5e4036bbae5fc45a551e536d442ccd9"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.23.1/rex-amq-adapter_0.23.1_linux_arm64.tar.gz"
-      sha256 "4a179050c3d6a919f9d48582f634700db4efbe7cc8ef70107c4a308d5cd50a07"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.24.0/rex-amq-adapter_0.24.0_linux_arm64.tar.gz"
+      sha256 "a70d387b3a26fc6b150c3746e23814716e613321ef9325d84c2c018ee7ab282d"
     end
 
     on_intel do
-      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.23.1/rex-amq-adapter_0.23.1_linux_amd64.tar.gz"
-      sha256 "2b23b4576677af3088c04cc361f207546eef14a7094c01cfd4d8bb81629887cb"
+      url "https://github.com/est7/rex-amq-adapter/releases/download/v0.24.0/rex-amq-adapter_0.24.0_linux_amd64.tar.gz"
+      sha256 "e2a4cfef6a9fcb07cdb0762ade86e156b91196639e2e2814cb34114665079e17"
     end
   end
 
@@ -37,18 +37,18 @@ class RexAmqAdapter < Formula
     <<~EOS
       Install the skill and hooks for every agent found (Claude Code, Codex,
       Antigravity, Pi):
-        rex-amq-adapter setup
+        rex-amq-adapter install setup
 
       Start Codex with --no-daemon so its hooks and tools inherit the Rex pane environment.
       Codex runs new hooks only after you approve them with /hooks.
-      Upgrades keep the hooks and the agent guide current: they run
-      #{opt_bin}/rex-amq-adapter. If `rex-amq-adapter status` then reports
-      anything outdated (such as the Pi extension), run setup again.
+      Upgrades keep the hooks current: they run #{opt_bin}/rex-amq-adapter.
+      If `rex-amq-adapter install status` reports anything outdated (such as the
+      SKILL.md stubs or Pi extension), run `rex-amq-adapter install setup` again.
     EOS
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}/rex-amq-adapter version")
-    assert_match "rex-amq-adapter", shell_output("#{bin}/rex-amq-adapter __internal skill")
+    assert_match "v#{version}", shell_output("#{bin}/rex-amq-adapter version --text")
+    assert_match "mail", shell_output("#{bin}/rex-amq-adapter skill list --text")
   end
 end
